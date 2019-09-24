@@ -1,0 +1,26 @@
+lane :test do
+  pp plistbuddy_print(
+    plist: 'spec/test.plist'
+  )
+
+  pp plistbuddy_get(
+    plist: 'spec/test.plist',
+    key: ':aps-environment'
+  )
+
+  plistbuddy_delete(
+    plist: 'spec/test.plist',
+    key: ':aps-environment'
+  )
+
+  plistbuddy_delete(
+    plist: 'spec/test.plist',
+    key: ':persons:1'
+  )
+
+  plistbuddy_set(
+    plist: 'spec/test.plist',
+    key: ':name',
+    value: 'wocao'
+  )
+end
